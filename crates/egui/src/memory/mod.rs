@@ -137,7 +137,7 @@ impl Default for Memory {
 }
 
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
-enum FocusDirection {
+pub enum FocusDirection {
     /// Select the widget closest above the current focused widget.
     Up,
 
@@ -910,6 +910,11 @@ impl Memory {
         if focus.focused() == Some(id) {
             focus.focused_widget = None;
         }
+    }
+
+    /// Move keyboard focus in a specific direction.
+    pub fn move_focus(&mut self, direction: FocusDirection) {
+        self.focus_mut().focus_direction = direction;
     }
 
     /// Returns true if

@@ -495,7 +495,7 @@ pub use self::{
     layers::{LayerId, Order},
     layout::*,
     load::SizeHint,
-    memory::{Memory, Options, Theme, ThemePreference},
+    memory::{FocusDirection, Memory, Options, Theme, ThemePreference},
     painter::Painter,
     response::{InnerResponse, Response},
     sense::Sense,
